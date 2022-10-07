@@ -25,4 +25,8 @@ export const HomeContainer = styled.div`
   }
 `
 
-export const PublicationsContainer = styled.div``
+export const PublicationsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+`

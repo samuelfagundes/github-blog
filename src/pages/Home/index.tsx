@@ -1,3 +1,4 @@
+import { Post } from './Components/Post'
 import { Profile } from './Components/Profile'
 import { SearchBar } from './Components/SearchBar'
 import { HomeContainer, PublicationsContainer } from './styles'
@@ -12,7 +13,14 @@ export function Home() {
         <span>6 publicações</span>
       </div>
       <SearchBar />
-      <PublicationsContainer></PublicationsContainer>
+      <PublicationsContainer>
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+      </PublicationsContainer>
     </HomeContainer>
   )
 }

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const SearchBarInput = styled.input`
   width: 100%;
   height: 50px;
+  margin-bottom: 3rem;
   padding: 0.75rem 1rem;
   line-height: 160%;
   border-radius: 6px;
