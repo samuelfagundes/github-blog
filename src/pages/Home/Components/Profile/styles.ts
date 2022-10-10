@@ -51,7 +51,7 @@ export const ProfileInfo = styled.div`
 
   footer {
     svg {
-      margin-left: 1rem;
+      margin-left: 1.5rem;
     }
   }
 `
