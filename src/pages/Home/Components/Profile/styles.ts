@@ -34,7 +34,8 @@ export const ProfileInfo = styled.div`
     justify-content: space-between;
     color: ${(props) => props.theme['base-title']};
 
-    p {
+    a {
+      text-decoration: none;
       font-size: 0.75rem;
       color: ${(props) => props.theme.blue};
 
