@@ -1,18 +1,31 @@
+import { formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
+import { Link } from 'react-router-dom'
+
 import { PostContainer } from './styles'
 
-export function Post() {
+interface PostProps {
+  title: string
+  body: string
+  createdAt: string
+  number: number
+}
+
+export function Post({ title, body, createdAt, number }: PostProps) {
   return (
     <PostContainer>
-      <div>
-        <h1>JavaScript data types and data structures</h1>
-        <span>Há 1 dia</span>
-      </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis,
-        officia atque ex amet cumque voluptates illo consequuntur animi
-        quibusdam et odio consequatur, minima illum quod dolorum provident
-        expedita maxime dolore!
-      </p>
+      <Link to={`/post/${number}`}>
+        <div>
+          <h1>{title}</h1>
+          <span>
+            {formatDistanceToNow(new Date(createdAt), {
+              addSuffix: true,
+              locale: ptBR,
+            })}
+          </span>
+        </div>
+        <p>{body}</p>
+      </Link>
     </PostContainer>
   )
 }

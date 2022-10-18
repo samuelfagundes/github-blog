@@ -13,8 +13,15 @@ export const PostInfoContainer = styled.div`
   footer {
     margin-top: 0.5rem;
 
+    i {
+      color: ${(props) => props.theme['base-label']};
+      margin-right: 0.5rem;
+    }
+
     svg {
+      color: ${(props) => props.theme['base-label']};
       margin-left: 1.5rem;
+      margin-right: 0.5rem;
     }
   }
 `

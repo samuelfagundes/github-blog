@@ -6,34 +6,11 @@ import {
   faBuilding,
   faUserGroup,
 } from '@fortawesome/free-solid-svg-icons'
-import { useEffect, useState } from 'react'
-import axios from 'axios'
-
-interface ProfileProps {
-  html_url: string
-  avatar_url: string
-  login: string
-  bio: string
-  name: string
-  company: string
-  followers: number
-}
+import { useContext } from 'react'
+import { IssuesContext } from '../../../../contexts/IssuesContext'
 
 export function Profile() {
-  const [profile, setProfile] = useState<ProfileProps>()
-
-  useEffect(() => {
-    async function getProfile() {
-      const response = await axios.get(
-        `http://api.github.com/users/samuelfagundes`,
-      )
-      setProfile(response.data)
-    }
-
-    getProfile()
-  }, [])
-
-  console.log(profile)
+  const { profile } = useContext(IssuesContext)
 
   return (
     <ProfileContainer>
@@ -57,7 +34,9 @@ export function Profile() {
           )}
           {profile?.company}
           <FontAwesomeIcon icon={faUserGroup} /> {profile?.followers}{' '}
-          {profile!.followers > 1 ? 'followers' : 'follower'}
+          {profile?.followers && profile.followers > 1
+            ? 'followers'
+            : 'follower'}
         </footer>
       </ProfileInfo>
     </ProfileContainer>

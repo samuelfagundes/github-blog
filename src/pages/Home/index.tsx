@@ -1,25 +1,34 @@
+import { useContext } from 'react'
+import { IssuesContext } from '../../contexts/IssuesContext'
 import { Post } from './Components/Post'
 import { Profile } from './Components/Profile'
-import { SearchBar } from './Components/SearchBar'
+import { SearchForm } from './Components/SearchForm'
 import { HomeContainer, PublicationsContainer } from './styles'
 
 export function Home() {
+  const { issues } = useContext(IssuesContext)
+
   return (
     <HomeContainer>
       <Profile />
 
       <div className="publicationsHeader">
         <h2>Publicações</h2>
-        <span>6 publicações</span>
+        <span>{issues.length} publicações</span>
       </div>
-      <SearchBar />
+      <SearchForm />
       <PublicationsContainer>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        {issues.map((issue) => {
+          return (
+            <Post
+              title={issue.title}
+              body={issue.body}
+              createdAt={issue.created_at}
+              number={issue.number}
+              key={issue.id}
+            />
+          )
+        })}
       </PublicationsContainer>
     </HomeContainer>
   )
