@@ -38,6 +38,11 @@ export const PostInfoHeader = styled.header`
     width: 12px;
     height: 12px;
   }
+
+  a {
+    color: ${(props) => props.theme.blue};
+    text-decoration: none;
+  }
 `
 
 export const PostInfoContent = styled.div`

@@ -37,6 +37,24 @@ export const PostContainer = styled.div`
       text-overflow: ellipsis;
     }
 
+    pre {
+      display: flex;
+      margin: 1.5rem 0;
+
+      code {
+        padding: 1rem;
+      }
+    }
+
+    code {
+      width: 100%;
+      padding: 0.25rem;
+      border-radius: 2px;
+      line-height: 160%;
+
+      background-color: ${(props) => props.theme['base-post']};
+    }
+
     :last-child {
       margin-bottom: 5rem;
     }

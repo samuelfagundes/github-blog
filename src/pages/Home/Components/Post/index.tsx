@@ -1,5 +1,6 @@
 import { formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
+import ReactMarkdown from 'react-markdown'
 import { Link } from 'react-router-dom'
 
 import { PostContainer } from './styles'
@@ -24,7 +25,9 @@ export function Post({ title, body, createdAt, number }: PostProps) {
             })}
           </span>
         </div>
-        <p>{body}</p>
+        <p>
+          <ReactMarkdown>{body}</ReactMarkdown>
+        </p>
       </Link>
     </PostContainer>
   )

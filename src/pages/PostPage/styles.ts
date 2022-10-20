@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const PostPageContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0 auto 5rem;
   max-width: 54rem;
 `
 
@@ -20,10 +20,18 @@ export const PostPageContent = styled.div`
     }
   }
 
+  pre {
+    display: flex;
+    margin: 1.5rem 0;
+
+    code {
+      padding: 1rem;
+    }
+  }
+
   code {
     width: 100%;
-    margin-top: 1.5rem;
-    padding: 1rem;
+    padding: 0.25rem;
     border-radius: 2px;
     line-height: 160%;
 
