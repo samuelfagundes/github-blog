@@ -40,7 +40,11 @@ export function PostPage() {
 
       <PostPageContent>
         <p>
-          <ReactMarkdown>{post?.body}</ReactMarkdown>
+          {post?.body ? (
+            <ReactMarkdown>{post.body}</ReactMarkdown>
+          ) : (
+            'Loading...'
+          )}
         </p>
       </PostPageContent>
     </PostPageContainer>
